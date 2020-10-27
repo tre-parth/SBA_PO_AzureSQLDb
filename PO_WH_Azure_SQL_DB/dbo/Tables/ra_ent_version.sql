@@ -1,0 +1,26 @@
+﻿CREATE TABLE [dbo].[ra_ent_version] (
+    [DTYPE]              VARCHAR (31)  NOT NULL,
+    [id]                 INT           IDENTITY (1, 1) NOT NULL,
+    [creationDate]       DATETIME      NULL,
+    [mimeType]           VARCHAR (255) NULL,
+    [owner]              VARCHAR (255) NULL,
+    [revision]           INT           NOT NULL,
+    [blobsize]           NUMERIC (19)  NULL,
+    [blobType]           INT           NULL,
+    [ioObjectClassName]  VARCHAR (255) NULL,
+    [createdByOperator]  VARCHAR (255) NULL,
+    [createdByProcessAt] VARCHAR (255) NULL,
+    [representationType] INT           NULL,
+    [entry_id]           INT           NULL,
+    [blobBuffer_id]      INT           NULL,
+    [xmlBuffer_id]       INT           NULL,
+    [IOObjectBuffer_id]  INT           NULL,
+    [metaDataBuffer_id]  INT           NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC),
+    CONSTRAINT [FK_315c2cl9nufr0f0pxvny8l3e8] FOREIGN KEY ([xmlBuffer_id]) REFERENCES [dbo].[ra_ent_bytebuffer] ([id]),
+    CONSTRAINT [FK_35smxpkpr1p4u2fg802yhjaar] FOREIGN KEY ([IOObjectBuffer_id]) REFERENCES [dbo].[ra_ent_bytebuffer] ([id]),
+    CONSTRAINT [FK_58mvx9r2t6rn7wbiud4i5iuc4] FOREIGN KEY ([entry_id]) REFERENCES [dbo].[ra_ent_entry] ([id]),
+    CONSTRAINT [FK_bbesghyt8jx7yplqibann9p97] FOREIGN KEY ([metaDataBuffer_id]) REFERENCES [dbo].[ra_ent_bytebuffer] ([id]),
+    CONSTRAINT [FK_s09r1k1ojk2pjd4l9x3g7e3yh] FOREIGN KEY ([blobBuffer_id]) REFERENCES [dbo].[ra_ent_bytebuffer] ([id])
+);
+

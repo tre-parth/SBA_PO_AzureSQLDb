@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [sba]
+    AUTHORIZATION [dbo];
+

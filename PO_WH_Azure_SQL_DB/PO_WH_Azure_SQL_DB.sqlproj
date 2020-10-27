@@ -447,5 +447,6 @@
     <Build Include="Security\rm.sql" />
     <Build Include="Security\sba.sql" />
     <Build Include="Security\stg.sql" />
+    <Build Include="land\Tables\temp_1234.sql" />
   </ItemGroup>
 </Project>

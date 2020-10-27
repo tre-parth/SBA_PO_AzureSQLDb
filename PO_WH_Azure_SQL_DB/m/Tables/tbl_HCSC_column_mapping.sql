@@ -12,3 +12,5 @@ Set]             NVARCHAR (MAX) NULL,
     [Date_Updated]         DATETIME       CONSTRAINT [DF_tbl_HCSC_column_mapping_Date_Updated] DEFAULT (getdate()) NULL
 );
 
+
+

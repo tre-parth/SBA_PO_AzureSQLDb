@@ -1,0 +1,25 @@
+﻿CREATE TABLE [land].[tbl_eligibility_BCBS_FL_Final] (
+    [UNKNOWN_CODE_EZ]   VARCHAR (MAX) NULL,
+    [LAST_NAME]         VARCHAR (MAX) NULL,
+    [FIRST_NAME]        VARCHAR (MAX) NULL,
+    [SUBSCRIBER SSN]    VARCHAR (MAX) NULL,
+    [ADDRESS_1]         VARCHAR (MAX) NULL,
+    [ADDRESS_2]         VARCHAR (MAX) NULL,
+    [CITY]              VARCHAR (MAX) NULL,
+    [STATE]             VARCHAR (MAX) NULL,
+    [ZIP]               VARCHAR (MAX) NULL,
+    [ZIP-4]             VARCHAR (MAX) NULL,
+    [DOB]               VARCHAR (MAX) NULL,
+    [GENDER]            VARCHAR (MAX) NULL,
+    [RELATIONSHIP_CODE] VARCHAR (MAX) NULL,
+    [GROUP_PRFX]        VARCHAR (MAX) NULL,
+    [GROUP_BASE]        VARCHAR (MAX) NULL,
+    [GROUP_SUFX]        VARCHAR (MAX) NULL,
+    [ELIG_START_DT]     VARCHAR (MAX) NULL,
+    [ELIG_END_DT]       VARCHAR (MAX) NULL,
+    [PLAN_TYPE]         VARCHAR (MAX) NULL,
+    [COVERAGE_TYPE]     VARCHAR (MAX) NULL,
+    [ALT_ID]            VARCHAR (MAX) NULL,
+    [PAT_ID]            VARCHAR (MAX) NULL
+);
+

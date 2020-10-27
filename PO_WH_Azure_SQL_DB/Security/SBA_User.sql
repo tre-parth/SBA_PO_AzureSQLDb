@@ -1,0 +1,2 @@
+﻿CREATE USER [SBA_User] FOR LOGIN [SBA_login];
+

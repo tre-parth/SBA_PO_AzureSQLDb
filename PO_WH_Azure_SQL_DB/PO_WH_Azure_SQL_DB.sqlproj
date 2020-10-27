@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>PO_WH_Azure_SQL_DB</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{2a431e0e-b1a7-4233-a2e8-46f3d3ca4995}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>PO_WH_Azure_SQL_DB</RootNamespace>
+    <AssemblyName>PO_WH_Azure_SQL_DB</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="m\" />
+    <Folder Include="m\Tables\" />
+    <Folder Include="stg\" />
+    <Folder Include="stg\Tables\" />
+    <Folder Include="land\" />
+    <Folder Include="land\Tables\" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="rm\" />
+    <Folder Include="rm\Tables\" />
+    <Folder Include="audit\" />
+    <Folder Include="audit\Tables\" />
+    <Folder Include="dwh\" />
+    <Folder Include="dwh\Tables\" />
+    <Folder Include="bkp\" />
+    <Folder Include="bkp\Tables\" />
+    <Folder Include="map\" />
+    <Folder Include="map\Tables\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dwh\Stored Procedures\" />
+    <Folder Include="stg\Stored Procedures\" />
+    <Folder Include="audit\Stored Procedures\" />
+    <Folder Include="m\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="m\Tables\pipeline_details.sql" />
+    <Build Include="stg\Tables\tbl_medical_claim.sql" />
+    <Build Include="land\Tables\Test_tbl_medical_claim_HCSC.sql" />
+    <Build Include="dbo\Tables\map.tbl_msdrg.sql" />
+    <Build Include="rm\Tables\tbl_input_LBP_RM.sql" />
+    <Build Include="dbo\Tables\rr_rel_domain_category.sql" />
+    <Build Include="stg\Tables\error_tbl_cm_data_transfer_client_list.sql" />
+    <Build Include="dbo\Tables\rr_rel_realm_domain.sql" />
+    <Build Include="land\Tables\cigna_eligibilty_null_report.sql" />
+    <Build Include="stg\Tables\tbl_cm_data_transfer_client_list.sql" />
+    <Build Include="m\Tables\tbl_Claim_column_mapping.sql" />
+    <Build Include="stg\Tables\tbl_client_program_info.sql" />
+    <Build Include="m\Tables\file_details.sql" />
+    <Build Include="stg\Tables\error_tbl_client_program_info.sql" />
+    <Build Include="land\Tables\cigna_eligibility_grp_by_report.sql" />
+    <Build Include="land\Tables\tbl_medical_claim.sql" />
+    <Build Include="dbo\Tables\DATABASECHANGELOGLOCK.sql" />
+    <Build Include="land\Tables\hcsc_medical_claim_null_report.sql" />
+    <Build Include="rm\Tables\tbl_output_HIP_RF_RM.sql" />
+    <Build Include="audit\Tables\tbl_log_sufficiency_and_completeness.sql" />
+    <Build Include="dbo\Tables\DATABASECHANGELOG.sql" />
+    <Build Include="dbo\Tables\Rapid_Miner_Test.sql" />
+    <Build Include="dbo\Tables\SCHEDULER_CALENDARS.sql" />
+    <Build Include="land\Tables\hcsc_medical_claim_grp_by_report.sql" />
+    <Build Include="m\Tables\tbl_code_files_mapping.sql" />
+    <Build Include="dbo\Tables\SCHEDULER_CRON_TRIGGERS.sql" />
+    <Build Include="land\Tables\tbl_medical_claim_truven.sql" />
+    <Build Include="dbo\Tables\SCHEDULER_FIRED_TRIGGERS.sql" />
+    <Build Include="dbo\Tables\SAMPLE_HIP_RM.sql" />
+    <Build Include="rm\Tables\tbl_output_HIP_GB_RM.sql" />
+    <Build Include="dbo\Tables\SCHEDULER_PAUSED_TRIGGER_GRPS.sql" />
+    <Build Include="dbo\Tables\SCHEDULER_SCHEDULER_STATE.sql" />
+    <Build Include="dwh\Tables\dim_tbl_provider.sql" />
+    <Build Include="dbo\Tables\SCHEDULER_LOCKS.sql" />
+    <Build Include="audit\Tables\SAMPLE_HIP_RM.sql" />
+    <Build Include="dbo\Tables\SCHEDULER_JOB_DETAILS.sql" />
+    <Build Include="dwh\Tables\fact_tbl_medical_claim.sql" />
+    <Build Include="rm\Tables\tbl_output_KNEE_LR_RM.sql" />
+    <Build Include="dbo\Tables\SCHEDULER_SIMPLE_TRIGGERS.sql" />
+    <Build Include="land\Tables\truven_medical_claim_null_report.sql" />
+    <Build Include="bkp\Tables\fact_tbl_medical_claim_history.sql" />
+    <Build Include="dwh\Tables\dim_tbl_cm_eligibility.sql" />
+    <Build Include="dbo\Tables\SCHEDULER_SIMPROP_TRIGGERS.sql" />
+    <Build Include="land\Tables\truven_medical_claim_grp_by_report.sql" />
+    <Build Include="dwh\Tables\dim_tbl_cm_participation.sql" />
+    <Build Include="stg\Tables\Test_tbl_medical_claim.sql" />
+    <Build Include="dbo\Tables\SCHEDULER_BLOB_TRIGGERS.sql" />
+    <Build Include="land\Tables\tbl_eligibility_medica.sql" />
+    <Build Include="dbo\Tables\SCHEDULER_TRIGGERS.sql" />
+    <Build Include="land\Tables\tbl_medical_claim_Medica.sql" />
+    <Build Include="m\Tables\tbl_config_code_files.sql" />
+    <Build Include="land\Tables\tbl_ndc_codes.sql" />
+    <Build Include="rm\Tables\tbl_output_KNEE_DT_RM.sql" />
+    <Build Include="m\Tables\tbl_config_column_mapping.sql" />
+    <Build Include="land\Tables\tbl_msdrg_codes.sql" />
+    <Build Include="land\Tables\tbl_revenue_codes.sql" />
+    <Build Include="m\Tables\tbl_dynamic_column_mapping.sql" />
+    <Build Include="rm\Tables\tbl_output_KNEE_RF_RM.sql" />
+    <Build Include="dwh\Tables\dim_tbl_member_month.sql" />
+    <Build Include="land\Tables\medica_medical_claim_null_report.sql" />
+    <Build Include="land\Tables\medica_medical_claim_grp_by_report.sql" />
+    <Build Include="land\Tables\medica_eligibility_null_report.sql" />
+    <Build Include="rm\Tables\tbl_output_KNEE_GB_RM.sql" />
+    <Build Include="land\Tables\medica_eligibility_grp_by_report.sql" />
+    <Build Include="stg\Tables\tbl_ndc_codes.sql" />
+    <Build Include="land\Tables\tbl_member.sql" />
+    <Build Include="land\Tables\tbl_eligibility_UMR_1.sql" />
+    <Build Include="land\Tables\tbl_medical_claim_UMR_1.sql" />
+    <Build Include="stg\Tables\tbl_msdrg_codes.sql" />
+    <Build Include="land\Tables\tbl_medical_claim_1.sql" />
+    <Build Include="land\Tables\tbl_eligibility_UMR.sql" />
+    <Build Include="dwh\Tables\code_tbl_carrier_info.sql" />
+    <Build Include="rm\Tables\tbl_output_UF_LR_RM.sql" />
+    <Build Include="land\Tables\tbl_medical_claim_UMR.sql" />
+    <Build Include="stg\Tables\tbl_revenue_codes.sql" />
+    <Build Include="dwh\Tables\code_tbl_client_account.sql" />
+    <Build Include="land\Tables\UMR_eligibility_null_report.sql" />
+    <Build Include="dbo\Tables\ra_ent_accesslog.sql" />
+    <Build Include="land\Tables\UMR_eligibility_grp_by_report.sql" />
+    <Build Include="dwh\Tables\tbl_ndc_codes.sql" />
+    <Build Include="dbo\Tables\con_md.sql" />
+    <Build Include="land\Tables\UMR_medical_claim_null_report.sql" />
+    <Build Include="dbo\Tables\ra_ent_bytebuffer.sql" />
+    <Build Include="rm\Tables\tbl_output_UF_DT_RM.sql" />
+    <Build Include="land\Tables\UMR_medical_claim_grp_by_report.sql" />
+    <Build Include="dwh\Tables\tbl_msdrg_codes.sql" />
+    <Build Include="stg\Tables\tbl_ndc.sql" />
+    <Build Include="dbo\Tables\con_md_errors.sql" />
+    <Build Include="land\Tables\tbl_medical_claim_aetna.sql" />
+    <Build Include="dbo\Tables\ra_ent_configuration.sql" />
+    <Build Include="audit\Tables\Test_tbl_DataValidation.sql" />
+    <Build Include="dwh\Tables\tbl_revenue_codes.sql" />
+    <Build Include="dbo\Tables\con_md_keys.sql" />
+    <Build Include="dbo\Tables\ra_ent_confirmable_action.sql" />
+    <Build Include="rm\Tables\tbl_output_UF_RF_RM.sql" />
+    <Build Include="dbo\Tables\con_md_params.sql" />
+    <Build Include="dbo\Tables\ra_ent_dbconnectionentry.sql" />
+    <Build Include="stg\Tables\tbl_medical_claim_aetna.sql" />
+    <Build Include="dbo\Tables\con_md_tags.sql" />
+    <Build Include="dbo\Tables\ra_ent_entry.sql" />
+    <Build Include="m\Tables\tbl_config_code_files_v2.sql" />
+    <Build Include="rm\Tables\tbl_output_UF_GB_RM.sql" />
+    <Build Include="dbo\Tables\con_md_value_providers.sql" />
+    <Build Include="land\Tables\aetna_medical_claim_null_report.sql" />
+    <Build Include="dbo\Tables\ra_ent_entry_migration.sql" />
+    <Build Include="dbo\Tables\con_md_vp_params.sql" />
+    <Build Include="dbo\Tables\ra_ent_exportedprocess.sql" />
+    <Build Include="rm\Tables\tbl_output_LBP_LR_RM.sql" />
+    <Build Include="dbo\Tables\con_v_vault_entries.sql" />
+    <Build Include="land\Tables\aetna_medical_claim_grp_by_report.sql" />
+    <Build Include="land\Tables\tbl_medical_claim_CHPS_Cerner.sql" />
+    <Build Include="dbo\Tables\ra_ent_group.sql" />
+    <Build Include="land\Tables\tbl_icd_cm_codes.sql" />
+    <Build Include="dbo\Tables\con_vault_entries.sql" />
+    <Build Include="land\Tables\tbl_icd_pcs_codes.sql" />
+    <Build Include="stg\Tables\tbl_msdrg.sql" />
+    <Build Include="dbo\Tables\SAMPLE_HIP_RM_temp_2.sql" />
+    <Build Include="dbo\Tables\ra_ent_jobsubmissionfailure.sql" />
+    <Build Include="dbo\Tables\jobservice_group.sql" />
+    <Build Include="land\Tables\tbl_eligibility_CHPS_cerner.sql" />
+    <Build Include="rm\Tables\tbl_output_LBP_DT_RM.sql" />
+    <Build Include="stg\Tables\tbl_medical_claim_CHPS_Cerner.sql" />
+    <Build Include="dbo\Tables\ra_ent_ldapgroup.sql" />
+    <Build Include="m\Tables\tbl_cm_data_transfer_client_list.sql" />
+    <Build Include="dbo\Tables\jobservice_job.sql" />
+    <Build Include="land\Tables\tbl_medical_claim_BCBS_M.sql" />
+    <Build Include="land\Tables\CHPS_cerner_medical_claim_null_report.sql" />
+    <Build Include="dbo\Tables\ra_ent_lock.sql" />
+    <Build Include="land\Tables\CHPS_cerner_medical_claim_grp_by_report.sql" />
+    <Build Include="m\Tables\tbl_column_mapping.sql" />
+    <Build Include="rm\Tables\tbl_output_LBP_RF_RM.sql" />
+    <Build Include="land\Tables\tbl_medical_claim_BCBS_FL_sequa.sql" />
+    <Build Include="dbo\Tables\ra_ent_migration.sql" />
+    <Build Include="audit\Tables\tbl_DataValidation.sql" />
+    <Build Include="dbo\Tables\ra_ent_parametermapping.sql" />
+    <Build Include="m\Tables\tbl_HCSC_column_mapping.sql" />
+    <Build Include="dbo\Tables\jobservice_job_agent.sql" />
+    <Build Include="land\Tables\BCBS_M_medical_claim_null_report.sql" />
+    <Build Include="rm\Tables\tbl_output_LBP_GB_RM.sql" />
+    <Build Include="land\Tables\BCBS_M_medical_claim_grp_by_report.sql" />
+    <Build Include="dbo\Tables\ra_ent_permission.sql" />
+    <Build Include="stg\Tables\tbl_pharmacy_claim.sql" />
+    <Build Include="stg\Tables\tbl_medical_claim_BCBS_FL_sequa.sql" />
+    <Build Include="dwh\Tables\fact_tbl_pharmacy_claim.sql" />
+    <Build Include="land\Tables\tbl_eligibility_BCBS_FL_sequa.sql" />
+    <Build Include="dbo\Tables\ra_ent_processexecparam.sql" />
+    <Build Include="bkp\Tables\fact_tbl_pharmacy_claim_history.sql" />
+    <Build Include="dbo\Tables\jobservice_job_context.sql" />
+    <Build Include="land\Tables\BCBS_FL_sequa_medical_claim_null_report.sql" />
+    <Build Include="dwh\Tables\tbl_icd_cm_codes.sql" />
+    <Build Include="m\Tables\tbl_Eligibility_header_compare.sql" />
+    <Build Include="rm\Tables\tbl_output_WLS_LR_RM.sql" />
+    <Build Include="land\Tables\BCBS_FL_sequa_medical_claim_grp_by_report.sql" />
+    <Build Include="dbo\Tables\ra_ent_properties.sql" />
+    <Build Include="m\Tables\tbl_Eligibility_HCSC_Mapping.sql" />
+    <Build Include="dbo\Tables\jobservice_job_context_in.sql" />
+    <Build Include="dwh\Tables\tbl_icd_pcs_codes.sql" />
+    <Build Include="dbo\Tables\jobservice_job_context_macro.sql" />
+    <Build Include="land\Tables\tbl_eligibility_Truven.sql" />
+    <Build Include="dbo\Tables\ra_ent_property.sql" />
+    <Build Include="land\Tables\tbl_eligibility.sql" />
+    <Build Include="land\Tables\Truven_eligibility_null_report.sql" />
+    <Build Include="stg\Tables\tbl_icd_cm_codes.sql" />
+    <Build Include="rm\Tables\tbl_output_WLS_GB_RM.sql" />
+    <Build Include="dbo\Tables\jobservice_job_context_out.sql" />
+    <Build Include="land\Tables\Truven_eligibility_grp_by_report.sql" />
+    <Build Include="dbo\Tables\ra_ent_trigger.sql" />
+    <Build Include="dbo\Tables\jobservice_job_error.sql" />
+    <Build Include="land\Tables\tbl_eligibility_BCBS_FL.sql" />
+    <Build Include="stg\Tables\tbl_icd_pcs_codes.sql" />
+    <Build Include="dbo\Tables\ra_ent_user.sql" />
+    <Build Include="dbo\Tables\jobservice_job_log.sql" />
+    <Build Include="land\Tables\tbl_eligibility_BCBS_FL_Final.sql" />
+    <Build Include="audit\Tables\audit_run.sql" />
+    <Build Include="rm\Tables\tbl_output_WLS_DT_RM.sql" />
+    <Build Include="land\Tables\BCBS_FL_eligibility_null_report.sql" />
+    <Build Include="dbo\Tables\ra_ent_version.sql" />
+    <Build Include="dbo\Tables\yr_month_test.sql" />
+    <Build Include="stg\Tables\Arch_tbl_eligibility.sql" />
+    <Build Include="land\Tables\BCBS_FL_eligibility_grp_by_report.sql" />
+    <Build Include="dbo\Tables\yr_month_test_1.sql" />
+    <Build Include="dbo\Tables\jobservice_operator_progress.sql" />
+    <Build Include="land\Tables\tbl_eligibility_BCBS_MN_01.sql" />
+    <Build Include="dbo\Tables\ra_ent_web_service_request.sql" />
+    <Build Include="land\Tables\BCBS_MN_medical_claim_null_report.sql" />
+    <Build Include="rm\Tables\tbl_output_WLS_RF_RM.sql" />
+    <Build Include="land\Tables\BCBS_MN_medical_claim_grp_by_report.sql" />
+    <Build Include="dbo\Tables\ra_rel_configuration_group.sql" />
+    <Build Include="map\Tables\tbl_revenue_codes.sql" />
+    <Build Include="land\Tables\tbl_medical_claim_highmark.sql" />
+    <Build Include="audit\Tables\audit_job_process_execution_log.sql" />
+    <Build Include="land\Tables\tbl_medical_claim_BCBS_MN.sql" />
+    <Build Include="dbo\Tables\ra_rel_dbconentry_group.sql" />
+    <Build Include="land\Tables\tbl_medical_claim_BCBS_MN_01.sql" />
+    <Build Include="rm\Tables\tbl_input_WLS_RM.sql" />
+    <Build Include="dbo\Tables\jobservice_queue.sql" />
+    <Build Include="land\Tables\tbl_eligibility_highmark.sql" />
+    <Build Include="dbo\Tables\ra_rel_entry_permission.sql" />
+    <Build Include="land\Tables\highmark_medical_claim_null_report.sql" />
+    <Build Include="dbo\Tables\ra_rel_expproc_param.sql" />
+    <Build Include="dbo\Tables\jobservice_queue_purge.sql" />
+    <Build Include="land\Tables\highmark_medical_claim_grp_by_report.sql" />
+    <Build Include="dbo\Tables\ra_rel_group_ldapgroup.sql" />
+    <Build Include="land\Tables\highmark_eligibility_null_report.sql" />
+    <Build Include="dbo\Tables\ra_rel_group_user.sql" />
+    <Build Include="dwh\Tables\dim_tbl_integrated_id.sql" />
+    <Build Include="dbo\Tables\jobservice_queue_x_group.sql" />
+    <Build Include="land\Tables\highmark_eligibility_grp_by_report.sql" />
+    <Build Include="dbo\Tables\ra_rel_ldapgroup_group.sql" />
+    <Build Include="land\Tables\tbl_eligibility_BCBS_M.sql" />
+    <Build Include="dbo\Tables\ra_rel_user_group.sql" />
+    <Build Include="dbo\Tables\permissions_perm.sql" />
+    <Build Include="land\Tables\BCBS_M_eligibility_null_report.sql" />
+    <Build Include="stg\Tables\test_tbl_eligibility.sql" />
+    <Build Include="land\Tables\BCBS_M_eligibility_grp_by_report.sql" />
+    <Build Include="land\Tables\report_temp.sql" />
+    <Build Include="m\Tables\tbl_Claim_Cigna_column_mapping.sql" />
+    <Build Include="dbo\Tables\repos_repo.sql" />
+    <Build Include="land\Tables\tbl_medical_claim_uhc.sql" />
+    <Build Include="m\Tables\tbl_Eligibility_Cigna_column_mapping.sql" />
+    <Build Include="land\Tables\tbl_medical_claim_Verscend.sql" />
+    <Build Include="dbo\Tables\repos_repo_x_perm.sql" />
+    <Build Include="m\Tables\tbl_cm_data_transfer_client_list_temp.sql" />
+    <Build Include="dbo\Tables\repos_secret.sql" />
+    <Build Include="land\Tables\tbl_eligibility_uhc.sql" />
+    <Build Include="land\Tables\tbl_eligibility_Verscend.sql" />
+    <Build Include="land\Tables\Verscend_medical_claim_null_report.sql" />
+    <Build Include="dbo\Tables\shedlock.sql" />
+    <Build Include="stg\Tables\tbl_sf_eligibility.sql" />
+    <Build Include="land\Tables\Verscend_medical_claim_grp_by_report.sql" />
+    <Build Include="land\Tables\Verscend_eligibility_null_report.sql" />
+    <Build Include="dbo\Tables\sync_files.sql" />
+    <Build Include="land\Tables\Verscend_eligibility_grp_by_report.sql" />
+    <Build Include="land\Tables\uhc_eligibility_null_report.sql" />
+    <Build Include="dwh\Tables\dim_tbl_member.sql" />
+    <Build Include="rm\Tables\tbl_output_HIP_DT_RM.sql" />
+    <Build Include="land\Tables\uhc_eligibility_grp_by_report.sql" />
+    <Build Include="land\Tables\report_grp_by.sql" />
+    <Build Include="land\Tables\uhc_medical_claim_null_report.sql" />
+    <Build Include="land\Tables\uhc_medical_claim_grp_by_report.sql" />
+    <Build Include="land\Tables\tbl_medical_claim_cigna.sql" />
+    <Build Include="land\Tables\tbl_sf_eligibility.sql" />
+    <Build Include="dbo\Tables\tmp_tbl_revenue_code.sql" />
+    <Build Include="dwh\Tables\dim_tbl_sf_eligibility.sql" />
+    <Build Include="rm\Tables\tbl_output_HIP_LR_RM.sql" />
+    <Build Include="land\Tables\tbl_sf_participation.sql" />
+    <Build Include="stg\Tables\tbl_icd_10_cm.sql" />
+    <Build Include="stg\Tables\tbl_member.sql" />
+    <Build Include="land\Tables\tbl_sf_client_program_info.sql" />
+    <Build Include="m\Tables\stage_details.sql" />
+    <Build Include="m\Tables\tbl_sf_client_program_info.sql" />
+    <Build Include="dbo\Tables\map.tbl_icd_10_cm.sql" />
+    <Build Include="map\Tables\tbl_icd_10_cm.sql" />
+    <Build Include="stg\Tables\Arch_tbl_medical_claim.sql" />
+    <Build Include="m\Tables\tbl_sf_participation.sql" />
+    <Build Include="land\Tables\tbl_eligibility_medica_test.sql" />
+    <Build Include="m\Tables\primary_to_secondary_container_sync.sql" />
+    <Build Include="rm\Tables\tbl_input_HIP_RM.sql" />
+    <Build Include="land\Tables\tbl_nppes_codes.sql" />
+    <Build Include="stg\Tables\error_tbl_medical_claim.sql" />
+    <Build Include="dwh\Tables\tbl_nppes_codes.sql" />
+    <Build Include="stg\Tables\error_tbl_member.sql" />
+    <Build Include="rm\Tables\tbl_input_KNEE_RM.sql" />
+    <Build Include="stg\Tables\error_tbl_pharmacy_claim.sql" />
+    <Build Include="m\Tables\tbl_claims_sufficiency_and_completeness.sql" />
+    <Build Include="stg\Tables\tbl_nppes_codes.sql" />
+    <Build Include="stg\Tables\tbl_medical_claim_prev.sql" />
+    <Build Include="land\Tables\tbl_eligibility_HCSC.sql" />
+    <Build Include="dbo\Tables\rr_ent_category.sql" />
+    <Build Include="stg\Tables\tbl_eligibility.sql" />
+    <Build Include="rm\Tables\tbl_input_UF_RM.sql" />
+    <Build Include="land\Tables\hcsc_eligibility_null_report.sql" />
+    <Build Include="dbo\Tables\rr_ent_db_category_provider.sql" />
+    <Build Include="stg\Tables\tbl_medical_claim_cigna.sql" />
+    <Build Include="dbo\Tables\tmp_tbl_icd_10_cm_code.sql" />
+    <Build Include="land\Tables\cigna_null_report.sql" />
+    <Build Include="dbo\Tables\rr_ent_domain.sql" />
+    <Build Include="land\Tables\cigna_grp_by_report.sql" />
+    <Build Include="stg\Tables\tbl_icd_10_pcs.sql" />
+    <Build Include="land\Tables\hcsc_eligibility_grp_by.sql" />
+    <Build Include="stg\Tables\tbl_eligibility_cigna.sql" />
+    <Build Include="m\Tables\primary_to_secondary_container_sync_ver2.sql" />
+    <Build Include="dbo\Tables\rr_ent_realm.sql" />
+    <Build Include="land\Tables\tbl_eligibility_cigna.sql" />
+    <Build Include="map\Tables\tbl_icd_10_pcs.sql" />
+    <Build Include="land\Tables\tbl_medical_claim_HCSC.sql" />
+    <Build Include="map\Tables\HCSC_medical_claim_reference_tbl.sql" />
+    <Build Include="dbo\Tables\rr_ent_reporttree.sql" />
+    <Build Include="map\Tables\tbl_msdrg.sql" />
+    <Build Include="Security\SBA_User.sql" />
+    <Build Include="Security\SBA_login.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Stored Procedures\DQ2.sql" />
+    <Build Include="dbo\Stored Procedures\cigna_eligibilty_null_report_inside.sql" />
+    <Build Include="dbo\Stored Procedures\cigna_eligibility_null.sql" />
+    <Build Include="dbo\Stored Procedures\Value_Mapping.sql" />
+    <Build Include="dbo\Stored Procedures\Data_Validation.sql" />
+    <Build Include="dbo\Stored Procedures\cigna_eligibility_grp_rpt_inside.sql" />
+    <Build Include="dbo\Stored Procedures\cigna_eligibility_grp_rpt.sql" />
+    <Build Include="dbo\Stored Procedures\hcsc_medical_claim_null_report_inside.sql" />
+    <Build Include="dbo\Stored Procedures\hcsc_medical_claim_null.sql" />
+    <Build Include="dbo\Stored Procedures\hcsc_medical_claim_grp_rpt_inside.sql" />
+    <Build Include="dbo\Stored Procedures\hcsc_medical_claim_grp_rpt.sql" />
+    <Build Include="dbo\Stored Procedures\code_file_dynamic_column_mapping.sql" />
+    <Build Include="dbo\Stored Procedures\audit_job_process_execution_log.sql" />
+    <Build Include="dwh\Stored Procedures\sp_stg_dw_fact_medical_claim.sql" />
+    <Build Include="dbo\Stored Procedures\medica_medical_claim_null.sql" />
+    <Build Include="dbo\Stored Procedures\medica_medical_claim_null_report_inside.sql" />
+    <Build Include="dbo\Stored Procedures\medica_medical_claim_grp_rpt.sql" />
+    <Build Include="dbo\Stored Procedures\medica_medical_claim_grp_rpt_inside.sql" />
+    <Build Include="dbo\Stored Procedures\land_to_stg_table.sql" />
+    <Build Include="dbo\Stored Procedures\dynamic_column_mapping.sql" />
+    <Build Include="stg\Stored Procedures\USP_LOAD_MSDRG.sql" />
+    <Build Include="dbo\Stored Procedures\usp_load_ndc_code_file.sql" />
+    <Build Include="dbo\Stored Procedures\usp_load_msdrg_code_file.sql" />
+    <Build Include="dbo\Stored Procedures\usp_load_revenue_code_file.sql" />
+    <Build Include="dbo\Stored Procedures\aetna_medical_claim_null_report_inside.sql" />
+    <Build Include="dbo\Stored Procedures\aetna_medical_claim_null.sql" />
+    <Build Include="dbo\Stored Procedures\aetna_medical_claim_grp_rpt_inside.sql" />
+    <Build Include="dbo\Stored Procedures\aetna_medical_claim_grp_rpt.sql" />
+    <Build Include="audit\Stored Procedures\USP_MEDICAL_CLAIMS_CONTROL_TOTALS_VALIDATION.sql" />
+    <Build Include="audit\Stored Procedures\create_run.sql" />
+    <Build Include="audit\Stored Procedures\END_Run.sql" />
+    <Build Include="dbo\Stored Procedures\usp_load_icd_cm_code_file.sql" />
+    <Build Include="dbo\Stored Procedures\usp_load_icd_pcs_code_file.sql" />
+    <Build Include="audit\Stored Procedures\manage_audit_pipeline_start.sql" />
+    <Build Include="audit\Stored Procedures\manage_audit_pipeline_end.sql" />
+    <Build Include="dbo\Stored Procedures\Data_Validation_Eligibility.sql" />
+    <Build Include="dbo\Stored Procedures\File_Details.sql" />
+    <Build Include="dbo\Stored Procedures\Eligibility_dynamic_column_mapping.sql" />
+    <Build Include="dwh\Stored Procedures\sp_stg_dw_fact_pharmacy_claim.sql" />
+    <Build Include="audit\Stored Procedures\USP_MEDICAL_CLAIMS_SUFFICIENCY_AND_COMPLETENESS_VALIDATION.sql" />
+    <Build Include="dbo\Stored Procedures\usp_oa_ds_device_master_load.sql" />
+    <Build Include="dbo\Stored Procedures\land_to_stg_table_eligibility.sql" />
+    <Build Include="dbo\Stored Procedures\temp.sql" />
+    <Build Include="stg\Stored Procedures\USP_LOAD_REVENUE_CODE.sql" />
+    <Build Include="dbo\Stored Procedures\grp_rpt_inside.sql" />
+    <Build Include="dbo\Stored Procedures\temp_grp_by.sql" />
+    <Build Include="audit\Stored Procedures\END_File_Details.sql" />
+    <Build Include="dwh\Stored Procedures\sp_stg_dw_dim_sf_eligibility.sql" />
+    <Build Include="dbo\Stored Procedures\cigna_null_report_inside.sql" />
+    <Build Include="dbo\Stored Procedures\cigna_null.sql" />
+    <Build Include="dwh\Stored Procedures\sp_stg_dw_dim_member.sql" />
+    <Build Include="m\Stored Procedures\sp_lnd_m_sf_client_program.sql" />
+    <Build Include="m\Stored Procedures\sp_lnd_m_sf_participation.sql" />
+    <Build Include="dbo\Stored Procedures\usp_load_nppes_code_file.sql" />
+    <Build Include="stg\Stored Procedures\USP_LOAD_ICD_10_CM_CODE.sql" />
+    <Build Include="dbo\Stored Procedures\cigna_grp_rpt_inside.sql" />
+    <Build Include="dbo\Stored Procedures\cigna_grp_rpt.sql" />
+    <Build Include="dwh\Stored Procedures\sp_stg_dw_dim_provider.sql" />
+    <Build Include="m\Stored Procedures\usp_update_sync_timestamp.sql" />
+    <Build Include="stg\Stored Procedures\USP_LOAD_ICD_10_PCS_CODE.sql" />
+    <Build Include="Security\audit.sql" />
+    <Build Include="Security\bkp.sql" />
+    <Build Include="Security\dwh.sql" />
+    <Build Include="Security\error.sql" />
+    <Build Include="Security\land.sql" />
+    <Build Include="Security\m.sql" />
+    <Build Include="Security\map.sql" />
+    <Build Include="Security\rm.sql" />
+    <Build Include="Security\sba.sql" />
+    <Build Include="Security\stg.sql" />
+  </ItemGroup>
+</Project>
